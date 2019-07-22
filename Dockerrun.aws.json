@@ -1,0 +1,28 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinition": [{
+        "name": "client",
+        "image": "brlewis23/multi-docker-client",
+        "hostname": "client",
+        "essential": false
+    },{
+        "name": "server",
+        "image": "brlewis23/multi-docker-server",
+        "hostname": "api",
+        "essential": false
+    },{
+        "name": "worker",
+        "image": "brlewis23/multi-docker-worker",
+        "hostname": "worker",
+        "essential": false
+    },{
+        "name": "nginx",
+        "image": "brlewis23/multi-docker-nginx",
+        "essential": true,
+        "portMappings": [{
+            "hostPort": 80,
+            "containerPort": 80
+        }],
+        "links": ["client", "server"]
+    }]
+}
