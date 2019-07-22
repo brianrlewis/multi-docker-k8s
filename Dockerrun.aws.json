@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containerDefinition": [{
+    "containerDefinitions": [{
         "name": "client",
         "image": "brlewis23/multi-docker-client",
         "hostname": "client",
